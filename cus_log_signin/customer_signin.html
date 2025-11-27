@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Sign Up</title>
+    <link rel="stylesheet" href="customer_signin.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Create Account</h2>
+
+        <form id="signupForm">
+
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="input-group">
+                <label>Mobile Number</label>
+                <input type="tel" id="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- SEND OTP BUTTON -->
+            <button type="button" class="otp-btn" id="sendOtpBtn">Send OTP</button>
+
+            <!-- OTP INPUT (HIDDEN INITIALLY) -->
+            <div class="input-group" id="otpSection" style="display: none;">
+                <label>Enter OTP</label>
+                <input type="text" id="otp" placeholder="Enter the OTP sent to your email" maxlength="6">
+            </div>
+
+            <div class="input-group">
+                <label>Set Password</label>
+                <input type="password" id="password" placeholder="Create a password" required>
+            </div>
+
+            <div class="input-group">
+                <label>Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Re-enter your password" required>
+            </div>
+
+            <!-- FINAL SIGNUP BUTTON -->
+            <button type="submit" class="btn" id="signupBtn" disabled>Sign Up</button>
+
+        </form>
+    </div>
+
+    <script src="customer_signin.js"></script>
+</body>
+</html>

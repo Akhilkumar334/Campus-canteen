@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin_dashboard.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>🔐 Admin</h2>
+
+        <ul>
+            <li onclick="goToPending()">Pending Requests</li>
+            <li onclick="goToApproved()">Approved Shops</li>
+            <li onclick="goToHomeCook()">Home Kitchen Requests</li>
+            <li onclick="logout()">Logout</li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+
+        <h1>Admin Dashboard</h1>
+        <p class="subtitle">Overview of the whole system</p>
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+                <h3 id="totalShopkeepers">0</h3>
+                <p>Total Shopkeepers</p>
+            </div>
+
+            <div class="stat-card pending">
+                <h3 id="pendingShopkeepers">0</h3>
+                <p>Pending Approvals</p>
+            </div>
+
+            <div class="stat-card approved">
+                <h3 id="approvedShopkeepers">0</h3>
+                <p>Approved Shopkeepers</p>
+            </div>
+
+            <div class="stat-card rejected">
+                <h3 id="rejectedShopkeepers">0</h3>
+                <p>Rejected Shopkeepers</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="admin_dashboard.js"></script>
+
+</body>
+</html>

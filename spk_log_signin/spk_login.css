@@ -1,0 +1,146 @@
+/* =========================
+   GLOBAL PAGE STYLING
+========================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #ffa07a, #ff7f87);
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================
+   LOGIN CONTAINER
+========================= */
+
+.container {
+    background: #fff;
+    width: 420px;
+    padding: 35px;
+
+    border-radius: 16px;
+    text-align: center;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.title {
+    font-size: 28px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   LOGIN FORM
+========================= */
+
+.login-form {
+    text-align: left;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #444;
+    font-weight: 600;
+}
+
+/* Input Fields */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+
+    border-radius: 10px;
+    border: 1px solid #ccc;
+
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 8px rgba(255, 107, 107, 0.4);
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn {
+    width: 100%;
+    background: #ff6b6b;
+    border: none;
+    padding: 12px;
+
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #ff4e4e;
+    box-shadow: 0px 6px 18px rgba(255, 80, 80, 0.4);
+}
+
+
+/* =========================
+   SIGNUP PROMPT
+========================= */
+
+.signup-prompt {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.signup-link {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    color: #ff4e4e;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

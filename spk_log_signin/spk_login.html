@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Canteen - Shopkeeper Login</title>
+    <link rel="stylesheet" href="spk_login.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 class="title">🍽️ Campus Canteen</h1>
+        <p class="subtitle">Complete food pre-ordering ecosystem!</p>
+
+        <div class="login-form">
+
+            <h2 class="form-title">Shopkeeper Login</h2>
+
+            <!-- ⭐ ADDED FORM TAG -->
+            <form id="shopkeeperLoginForm">
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <!-- ⭐ ADDED ID -->
+                    <input type="text" id="shopkeeperEmail" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <!-- ⭐ ADDED ID -->
+                    <input type="password" id="shopkeeperPassword" placeholder="Enter your password" required>
+                </div>
+
+                <button class="login-btn" type="submit">Login</button>
+
+            </form>
+
+            <div class="signup-prompt">
+                <a href="spk_signin.html" class="signup-link">Don't have an account? Sign Up</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JS FILE -->
+    <script src="spk_login.js"></script>
+
+</body>
+
+</html>

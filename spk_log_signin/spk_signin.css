@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #ffa07a, #ff7f87);
+    font-family: "Poppins", sans-serif;
+}
+
+/* Container */
+.container {
+    background: #fff;
+    padding: 35px;
+    width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    animation: fadeIn 0.5s ease-out;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 8px rgba(255,107,107,0.4);
+}
+
+/* OTP Button */
+.otp-btn {
+    width: 100%;
+    background: #ffd4cd;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 15px;
+}
+
+.otp-btn:hover {
+    background: #ffbdb4;
+}
+
+/* Signup Button */
+.btn {
+    width: 100%;
+    background: #ff6b6b;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:disabled {
+    background: #ffb0b0;
+    cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+    background: #ff4e4e;
+    box-shadow: 0px 6px 15px rgba(255,80,80,0.4);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(15px);}
+    to {opacity: 1; transform: translateY(0);}
+}

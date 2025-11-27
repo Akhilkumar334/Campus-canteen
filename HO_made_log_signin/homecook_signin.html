@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Cook - Sign Up</title>
+    <link rel="stylesheet" href="homecook_signin.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Home Cook Registration</h2>
+
+        <form>
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Mobile Number</label>
+                <input type="tel" placeholder="Enter mobile number" pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="Enter email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Location (Hostel/House)</label>
+                <input type="text" placeholder="Enter your home/hostel location" required>
+            </div>
+
+            <div class="input-group">
+                <label>Food Type</label>
+                <select required>
+                    <option value="">Select Food Type</option>
+                    <option>Veg</option>
+                    <option>Non-Veg</option>
+                    <option>Both</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Available Timing</label>
+                <input type="text" placeholder="E.g., 11 AM - 3 PM" required>
+            </div>
+
+            <div class="input-group">
+                <label>Create Password</label>
+                <input type="password" placeholder="Enter password" required>
+            </div>
+
+            <div class="input-group">
+                <label>Confirm Password</label>
+                <input type="password" placeholder="Re-enter password" required>
+            </div>
+
+            <button class="btn">Sign Up</button>
+
+        </form>
+    </div>
+
+</body>
+</html>

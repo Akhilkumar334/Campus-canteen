@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #ffa07a, #ff7f87);
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    font-size: 38px;
+    font-weight: 700;
+    color: white;
+    margin-top: -40px;
+}
+
+.subtitle {
+    margin-top: -10px;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.role-card {
+    background: #ffffff;
+    padding: 30px;
+    width: 850px;
+    height: 320px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.role-card h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.role-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.role-box {
+    background: #ffe6df;
+    padding: 20px 10px;
+    flex: 1;
+    border-radius: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.25s ease;
+    border: 2px solid transparent;
+}
+
+.role-box:hover {
+    border-color: #ff6b6b;
+    background: #ffd4cd;
+    transform: scale(1.05);
+}
+
+.icon {
+    font-size: 40px;
+}
+
+.role-box h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+.role-box p {
+    font-size: 13px;
+    color: #555;
+}
+
+/* Card layout already exists — we add admin styling */
+
+.admin-box {
+    border: 2px solid #ff4e4e;
+    background: #ffe6e6;
+}
+
+.admin-box:hover {
+    background: #ff4e4e;
+    color: white;
+    transform: translateY(-6px);
+    box-shadow: 0px 10px 20px rgba(255, 80, 80, 0.4);
+}

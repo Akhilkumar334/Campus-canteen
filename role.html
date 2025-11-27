@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Role - Campus Canteen</title>
+    <link rel="stylesheet" href="role.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1 class="title">🍽️ Campus Canteen</h1>
+        <p class="subtitle">Complete food pre-ordering ecosystem!</p>
+
+        <div class="role-card">
+            <h2>Select Your Role</h2>
+
+            <div class="role-options">
+
+                <div class="role-box" onclick="goToCustomer()">
+                    <span class="icon">🧑‍🎓</span>
+                    <h3>Customer</h3>
+                    <p>Browse shops, order food, check order history.</p>
+                </div>
+
+                <div class="role-box" onclick="goToShopkeeper()">
+                    <span class="icon">🧑‍🍳</span>
+                    <h3>Shopkeeper</h3>
+                    <p>Manage shop, update menu, track orders.</p>
+                </div>
+                <div class="role-box" onclick="goToHomeCook()">
+                    <span class="icon">🧑‍🍳</span>
+                    <h3>home-kitchen</h3>
+                    <p>Provides home made food</p>
+                </div>
+
+                <div class="role-box admin-box" onclick="goToAdmin()">
+                    <span class="icon">🔐</span>
+                    <h3>Admin</h3>
+                    <p>Approve shopkeepers & home kitchens, manage system.</p>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function goToCustomer() {
+            window.location.href = "cus_log_signin/customer_login.html";
+        }
+        function goToShopkeeper() {
+            window.location.href = "spk_log_signin/spk_login.html";
+        }
+         function goToHomeCook() {
+            window.location.href = "HO_made_log_signin/homecook_login.html";
+        }
+        function goToAdmin() {
+            window.location.href = "Admin_page/admin_login.html";
+        }
+    </script>
+
+</body>
+</html>
