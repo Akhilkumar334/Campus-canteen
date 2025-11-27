@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f3f3f3;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 30px 0;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.request-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.request-card h2 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.detail {
+    margin: 6px 0;
+}
+
+.doc-img {
+    width: 240px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.approve-btn, .reject-btn {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.approve-btn {
+    background: #4caf50;
+}
+
+.reject-btn {
+    background: #e53935;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    background: #ff8080;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: white;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #ff4d4d;
+}

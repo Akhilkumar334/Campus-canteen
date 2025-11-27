@@ -1,25 +1,40 @@
-// Fetch shopkeeper status from LocalStorage
-let status = localStorage.getItem("shopkeeperVerified");
+// ---------------------------------------------
+// SHOPKEEPERS
+// ---------------------------------------------
+let shopkeepers = JSON.parse(localStorage.getItem("shopkeepersList")) || [];
 
-// Default counters
-let total = 0, pending = 0, approved = 0, rejected = 0;
+let totalShop = shopkeepers.length;
+let pendingShop = shopkeepers.filter(s => s.status === "pending").length;
+let approvedShop = shopkeepers.filter(s => s.status === "approved").length;
+let rejectedShop = shopkeepers.filter(s => s.status === "rejected").length;
 
-// For simulation (since only one shopkeeper exists for now)
-if (status !== null) {
-    total = 1;
+// Update UI
+document.getElementById("totalShopkeepers").innerText = totalShop;
+document.getElementById("pendingShopkeepers").innerText = pendingShop;
+document.getElementById("approvedShopkeepers").innerText = approvedShop;
+document.getElementById("rejectedShopkeepers").innerText = rejectedShop;
 
-    if (status === "pending") pending = 1;
-    if (status === "approved") approved = 1;
-    if (status === "rejected") rejected = 1;
-}
 
-// Update dashboard
-document.getElementById("totalShopkeepers").innerText = total;
-document.getElementById("pendingShopkeepers").innerText = pending;
-document.getElementById("approvedShopkeepers").innerText = approved;
-document.getElementById("rejectedShopkeepers").innerText = rejected;
+// ---------------------------------------------
+// HOME COOKS
+// ---------------------------------------------
+let homecooks = JSON.parse(localStorage.getItem("homecooksList")) || [];
 
-// Navigation
+let totalHC = homecooks.length;
+let pendingHC = homecooks.filter(h => h.status === "pending").length;
+let approvedHC = homecooks.filter(h => h.status === "approved").length;
+let rejectedHC = homecooks.filter(h => h.status === "rejected").length;
+
+// Update UI
+document.getElementById("totalHomecooks").innerText = totalHC;
+document.getElementById("pendingHomecooks").innerText = pendingHC;
+document.getElementById("approvedHomecooks").innerText = approvedHC;
+document.getElementById("rejectedHomecooks").innerText = rejectedHC;
+
+
+// ---------------------------------------------
+// NAVIGATION
+// ---------------------------------------------
 function goToPending() {
     window.location.href = "admin_pending_requests.html";
 }
@@ -29,7 +44,7 @@ function goToApproved() {
 }
 
 function goToHomeCook() {
-    window.location.href = "admin_homecook_requests.html";
+    window.location.href = "admin_homecook_request.html";
 }
 
 function logout() {

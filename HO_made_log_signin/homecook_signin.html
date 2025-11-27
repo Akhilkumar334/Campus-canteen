@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Cook - Sign Up</title>
+    <title>Home Cook – Sign Up</title>
     <link rel="stylesheet" href="homecook_signin.css">
 </head>
 <body>
@@ -11,57 +11,91 @@
     <div class="container">
         <h2>Home Cook Registration</h2>
 
-        <form>
+        <form id="homeCookForm">
 
+            <!-- Full Name -->
             <div class="input-group">
                 <label>Full Name</label>
-                <input type="text" placeholder="Enter your full name" required>
+                <input type="text" id="fullName" placeholder="Enter your full name" required>
             </div>
 
+            <!-- Mobile -->
             <div class="input-group">
                 <label>Mobile Number</label>
-                <input type="tel" placeholder="Enter mobile number" pattern="[0-9]{10}" required>
+                <input type="tel" id="mobile" placeholder="Enter mobile number" pattern="[0-9]{10}" required>
             </div>
 
+            <!-- Email -->
             <div class="input-group">
                 <label>Email</label>
-                <input type="email" placeholder="Enter email" required>
+                <input type="email" id="email" placeholder="Enter email" required>
             </div>
 
+            <!-- Send OTP -->
+            <button type="button" class="otp-btn" id="sendOtpBtn">Send OTP</button>
+
+            <!-- OTP Field -->
+            <div class="input-group" id="otpSection" style="display: none;">
+                <label>Enter OTP</label>
+                <input type="text" id="otp" placeholder="Enter OTP" maxlength="6">
+            </div>
+
+            <!-- Location -->
             <div class="input-group">
                 <label>Location (Hostel/House)</label>
-                <input type="text" placeholder="Enter your home/hostel location" required>
+                <input type="text" id="location" placeholder="Enter your location" required>
             </div>
 
+            <!-- Food Type -->
             <div class="input-group">
                 <label>Food Type</label>
-                <select required>
-                    <option value="">Select Food Type</option>
-                    <option>Veg</option>
-                    <option>Non-Veg</option>
-                    <option>Both</option>
+                <select id="foodType" required>
+                    <option value="" disabled selected>Select Food Type</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    <option value="Both">Both</option>
                 </select>
             </div>
 
+            <!-- Available Timing -->
             <div class="input-group">
                 <label>Available Timing</label>
-                <input type="text" placeholder="E.g., 11 AM - 3 PM" required>
+                <input type="text" id="timing" placeholder="E.g. 11 AM – 3 PM" required>
+            </div>
+
+            <!-- Documents -->
+            <div class="input-group">
+                <label>Upload Kitchen Photo</label>
+                <input type="file" id="kitchenPhoto" accept="image/*" required>
             </div>
 
             <div class="input-group">
+                <label>Upload ID Proof</label>
+                <input type="file" id="idProof" accept="image/*, .pdf" required>
+            </div>
+
+            <div class="input-group">
+                <label>Upload Food License</label>
+                <input type="file" id="license" accept="image/*, .pdf">
+            </div>
+
+            <!-- Password -->
+            <div class="input-group">
                 <label>Create Password</label>
-                <input type="password" placeholder="Enter password" required>
+                <input type="password" id="password" placeholder="Enter password" required>
             </div>
 
             <div class="input-group">
                 <label>Confirm Password</label>
-                <input type="password" placeholder="Re-enter password" required>
+                <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
             </div>
 
-            <button class="btn">Sign Up</button>
+            <!-- Final Button -->
+            <button type="submit" class="btn" id="signupBtn" disabled>Create Account</button>
 
         </form>
     </div>
 
+<script src="homecook_signin.js"></script>
 </body>
 </html>
