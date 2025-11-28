@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu & Settings</title>
+    <link rel="stylesheet" href="spk_menu.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2 class="logo">🍽️ Shopkeeper</h2>
+
+        <ul>
+            <li data-page="dashboard" onclick="goToDashboard()"><span class="material-icons">dashboard</span> Dashboard
+            </li>
+
+            <li data-page="menu" onclick="goToMenu()"><span class="material-icons">restaurant_menu</span> Menu &
+                Settings</li>
+
+            <li data-page="orders" onclick="goToOrders()"><span class="material-icons">receipt_long</span> Orders</li>
+
+            <li data-page="history" onclick="goToHistory()"><span class="material-icons">history</span> History</li>
+
+            <li onclick="logout()"><span class="material-icons">logout</span> Logout</li>
+        </ul>
+
+    </div>
+
+    <div class="main-content">
+        <h1>Menu & Shop Settings</h1>
+
+        <!-- SHOP SETTINGS -->
+        <div class="main-block">
+            <h2>Shop Settings</h2>
+
+            <label>Opening Time:</label>
+            <input type="time" id="openTime">
+
+            <label>Closing Time:</label>
+            <input type="time" id="closeTime">
+
+            <label>Shop Status:</label>
+            <select id="shopStatus">
+                <option value="open">Open</option>
+                <option value="closed">Closed</option>
+            </select>
+
+            <label>Minimum Offline Prepayment (₹):</label>
+            <input type="number" id="minPrepay" placeholder="Enter amount">
+
+            <button class="save-btn" onclick="saveSettings()">Save Settings</button>
+        </div>
+
+        <!-- MENU ITEMS -->
+        <div class="main-block">
+            <h2>Manage Menu</h2>
+
+            <form id="menuForm" class="add-item-form">
+
+                <input type="text" id="itemName" placeholder="Item name" required>
+                <input type="number" id="itemPrice" placeholder="Price" required>
+                <input type="text" id="itemCategory" placeholder="Category (e.g. Snacks)" required>
+                <textarea id="itemDesc" placeholder="Description" required></textarea>
+                <input type="file" id="itemImage" accept="image/*" required>
+
+                <button type="submit" class="add-btn" id="addItemBtn">Add Item</button>
+
+            </form>
+
+            <!-- Container where items display -->
+            <div id="menuList" class="menu-list"></div>
+
+            <!-- Items will be displayed here -->
+        </div>
+    </div>
+
+    </div>
+
+    <script src="spk_menu.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    background: #f5f7fa;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, #005bea, #00c6fb);
+    color: white;
+    padding: 25px;
+    position: fixed;
+}
+
+.logo {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 35px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.15);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.sidebar li.active {
+    background: #ffffff;
+    color: #005bea;
+    font-weight: 600;
+}
+
+
+.sidebar li:hover {
+    background: #ffffff;
+    color: #005bea;
+}
+
+/* Main content */
+.main-content {
+    margin-left: 270px;
+    padding: 30px;
+    width: calc(100% - 270px);
+}
+
+h1 { margin-bottom: 5px; }
+.subtitle { color: #666; margin-bottom: 25px; }
+
+/* Order cards */
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-header h3 {
+    margin: 0;
+}
+
+.order-detail {
+    margin: 8px 0;
+    color: #444;
+}
+
+.btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.accept-btn, .reject-btn, .update-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+.accept-btn { background: #28a745; }
+.reject-btn { background: #e63946; }
+.update-btn { background: #1e90ff; }

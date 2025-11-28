@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="spk_orders.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2 class="logo">🍽️ Shopkeeper</h2>
+
+        <ul>
+    <li data-page="dashboard" onclick="goToDashboard()"><span class="material-icons">dashboard</span> Dashboard</li>
+
+    <li data-page="menu" onclick="goToMenu()"><span class="material-icons">restaurant_menu</span> Menu & Settings</li>
+
+    <li data-page="orders" onclick="goToOrders()"><span class="material-icons">receipt_long</span> Orders</li>
+
+    <li data-page="history" onclick="goToHistory()"><span class="material-icons">history</span> History</li>
+
+    <li onclick="logout()"><span class="material-icons">logout</span> Logout</li>
+</ul>
+
+    </div>
+
+    <div class="main-content">
+        <h1>Incoming Orders</h1>
+        <p class="subtitle">Manage and process customer orders</p>
+
+        <div id="ordersContainer" class="orders-container">
+            <!-- Orders will load here -->
+        </div>
+    </div>
+
+    <script src="spk_orders.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: #f4f7fc;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, #005bea, #00c6fb);
+    padding: 25px;
+    color: white;
+    position: fixed;
+}
+
+.logo {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 35px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.15);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.sidebar li.active {
+    background: #ffffff;
+    color: #005bea;
+    font-weight: 600;
+}
+
+
+.sidebar li:hover {
+    background: #ffffff;
+    color: #005bea;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px;
+    padding: 30px;
+    width: calc(100% - 270px);
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* History Cards */
+.history-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.history-card {
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.history-card h3 {
+    margin: 0 0 8px 0;
+}
+
+.order-detail {
+    margin: 6px 0;
+    color: #444;
+}
+
+.status-completed {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-cancelled {
+    color: #e63946;
+    font-weight: bold;
+}

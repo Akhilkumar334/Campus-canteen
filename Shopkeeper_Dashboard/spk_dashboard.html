@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopkeeper Dashboard</title>
+    <link rel="stylesheet" href="spk_dashboard.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2 id="sidebarShopName">Shopkeeper</h2>
+
+        <ul>
+            <li id="menuDashboard" class="active" onclick="goDashboard()">🏠 Dashboard</li>
+            <li id="menuSettings" onclick="goMenu()">📋 Menu & Settings</li>
+            <li id="menuOrders" onclick="goOrders()">🛒 Orders</li>
+            <li id="menuHistory" onclick="goHistory()">📄 History</li>
+            <li onclick="logout()">🚪 Logout</li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+
+        <!-- TOP GREETING SECTION -->
+        <div class="greeting-box">
+            <h1 id="greetLine">👋 Welcome Back!</h1>
+            <p id="shopNameLine">Your shop: Loading...</p>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3 id="todayOrders">0</h3>
+                <p>Today's Orders</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="shopStatusText">—</h3>
+                <p>Shop Status</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="totalMenuItems">0</h3>
+                <p>Total Menu Items</p>
+            </div>
+        </div>
+
+    </div>
+
+<script src="spk_dashboard.js"></script>
+</body>
+</html>
