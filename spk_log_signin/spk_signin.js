@@ -78,6 +78,20 @@ document.getElementById("shopkeeperSignupForm").addEventListener("submit", funct
 
     // Save verification status
     localStorage.setItem("shopkeeperVerified", "pending");
+//     let shops = JSON.parse(localStorage.getItem("shopkeepers_list")) || [];
+
+// shops.push({
+//     ownerName,
+//     shopName,
+//     mobile,
+//     email,
+//     address,
+//     password,
+//     status: "pending"
+// });
+
+// localStorage.setItem("shopkeepers_list", JSON.stringify(shops));
+
 
     alert("Registration successful! Your account is under review.\nRedirecting...");
 

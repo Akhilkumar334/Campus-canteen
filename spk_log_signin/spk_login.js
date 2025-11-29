@@ -15,6 +15,8 @@ if (!loginForm) {
 
         // Fetch stored shopkeeper account (defensive)
         const savedEmail = localStorage.getItem("shop_email");
+       
+
         const savedPassword = localStorage.getItem("shop_password");
         const status = localStorage.getItem("shopkeeperVerified");
 

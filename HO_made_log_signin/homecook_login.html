@@ -11,25 +11,33 @@
     <div class="container">
         <h2>Home Cook Login</h2>
 
-        <form>
+        <form id="homecookLoginForm">
             <div class="input-group">
                 <label>Email</label>
-                <input type="email" placeholder="Enter your email" required>
+                <input 
+                    type="email" 
+                    id="homecookEmail" 
+                    placeholder="Enter your email" 
+                    required>
             </div>
 
             <div class="input-group">
                 <label>Password</label>
-                <input type="password" placeholder="Enter password" required>
+                <input 
+                    type="password" 
+                    id="homecookPassword" 
+                    placeholder="Enter password" 
+                    required>
             </div>
 
-            <button class="btn">Login</button>
+            <button class="btn" type="submit">Login</button>
 
             <p class="signup">
-                
                 <a href="homecook_signin.html">Don’t have a Home Cook account? Sign Up</a>
             </p>
         </form>
     </div>
 
+    <script src="homecook_login.js"></script>
 </body>
 </html>

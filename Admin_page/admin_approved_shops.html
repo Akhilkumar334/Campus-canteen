@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approved Shops</title>
+
+    <link rel="stylesheet" href="admin_approved_shops.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li onclick="goDashboard()">Dashboard</li>
+            <li onclick="goPending()">Pending Requests</li>
+            <li class="active">Approved Shops</li>
+            <li onclick="goHomeCook()">Home Kitchen Requests</li>
+            <li onclick="logout()">Logout</li>
+        </ul>
+    </div> -->
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+        <h1>Approved Shop</h1>
+        <p class="subtitle">List of shopkeepers approved by admin</p>
+
+        <div class="approved-box" id="approvedContainer">
+            <!-- JS will inject approved shop data -->
+        </div>
+        <a href="admin_dashboard.html" class="back-btn">⬅ Back to Dashboard</a>
+
+    </div>
+
+    <script src="admin_approved_shops.js"></script>
+
+</body>
+</html>

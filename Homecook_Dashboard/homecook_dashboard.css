@@ -1,0 +1,175 @@
+/* =============================== */
+/*   HOMECOOK DASHBOARD THEME      */
+/* =============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f7f5ff; /* soft pastel background */
+    display: flex;
+}
+
+/* =============================== */
+/*            SIDEBAR              */
+/* =============================== */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background: linear-gradient(180deg, #ffb7b2, #ffdac1); /* warm pastel kitchen */
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 4px 0 18px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #4a3d3d;
+}
+
+/* Buttons */
+.sidebar-btn {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    background: rgba(255,255,255,0.35);
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.25s ease;
+    color: #4a3d3d;
+}
+
+/* Hover effect */
+.sidebar-btn:hover {
+    background: rgba(255,255,255,0.55);
+    transform: translateX(5px);
+}
+
+/* Active Glow Style */
+.sidebar-btn.active {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 12px rgba(255,255,255,0.9);
+    font-weight: 600;
+    border-left: 5px solid #ff6f61;
+}
+
+/* Logout Button */
+.logout {
+    margin-top: 40px;
+    background: rgba(255,255,255,0.25);
+}
+
+.logout:hover {
+    background: rgba(255,255,255,0.45);
+}
+
+/* =============================== */
+/*            MAIN AREA            */
+/* =============================== */
+.main {
+    margin-left: 260px;
+    padding: 25px;
+    width: calc(100% - 260px);
+}
+
+/* =============================== */
+/*       GREETING HEADER           */
+/* =============================== */
+.greeting-box {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.greeting-box h1 {
+    font-size: 26px;
+    color: #3b3b3b;
+}
+
+.greeting-box p {
+    color: #6d6d6d;
+}
+
+.greet-emoji {
+    font-size: 40px;
+}
+
+/* =============================== */
+/*      DASHBOARD CARDS            */
+/* =============================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.big-number {
+    font-size: 32px;
+    color: #ff6f61; /* warm highlight color */
+    font-weight: bold;
+}
+
+/* =============================== */
+/*           RESPONSIVE            */
+/* =============================== */
+@media (max-width: 800px) {
+    .sidebar {
+        width: 200px;
+    }
+    .main {
+        margin-left: 210px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        position: absolute;
+        height: auto;
+        display: none;
+    }
+    .main {
+        margin-left: 0;
+        width: 100%;
+    }
+}

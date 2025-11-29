@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeCook Menu</title>
+
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="homecook_menu.css">
+
+</head>
+<body>
+
+    <!-- ========================= -->
+    <!--         SIDEBAR           -->
+    <!-- ========================= -->
+    <div class="sidebar">
+        <h2 id="sidebarKitchenName">Your Kitchen</h2>
+
+        <button class="sidebar-btn" onclick="goDashboard()">
+            <i class="material-icons">home</i>
+            Dashboard
+        </button>
+
+        <button class="sidebar-btn active" onclick="goMenu()">
+            <i class="material-icons">restaurant_menu</i>
+            Menu
+        </button>
+
+        <button class="sidebar-btn" onclick="goOrders()">
+            <i class="material-icons">shopping_bag</i>
+            Orders
+        </button>
+
+        <button class="sidebar-btn" onclick="goHistory()">
+            <i class="material-icons">history</i>
+            History
+        </button>
+
+        <button class="sidebar-btn logout" onclick="logout()">
+            <i class="material-icons">logout</i>
+            Logout
+        </button>
+    </div>
+
+    <!-- ========================= -->
+    <!--          MAIN AREA        -->
+    <!-- ========================= -->
+    <div class="main">
+
+        <!-- PAGE TITLE -->
+        <div class="top-header">
+            <h1>🍳 Your Menu</h1>
+            <button class="add-btn" onclick="openAddPopup()">
+                <i class="material-icons">add</i> Add Dish
+            </button>
+        </div>
+
+        <!-- MENU GRID -->
+        <div id="menuGrid" class="menu-grid">
+            <!-- JS will inject menu cards here -->
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!--       ADD DISH POPUP      -->
+    <!-- ========================= -->
+    <div id="addPopup" class="popup">
+        <div class="popup-box">
+
+            <h2>Add New Dish</h2>
+
+            <!-- Dish Name -->
+            <label>Dish Name</label>
+            <input type="text" id="dishName" placeholder="e.g., Paneer Curry">
+
+            <!-- Price -->
+            <label>Price (₹)</label>
+            <input type="number" id="dishPrice" placeholder="e.g., 120">
+
+            <!-- Description -->
+            <label>Description</label>
+            <textarea id="dishDesc" placeholder="Short description..."></textarea>
+
+            <!-- Image upload -->
+            <label>Dish Image</label>
+            <input type="file" id="dishImage" accept="image/*">
+
+            <!-- Buttons -->
+            <div class="btn-row">
+                <button class="cancel" onclick="closeAddPopup()">Cancel</button>
+                <button class="save" onclick="saveDish()">Save Dish</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- JS -->
+    <script src="homecook_menu.js"></script>
+
+</body>
+</html>

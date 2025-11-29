@@ -91,8 +91,11 @@ document.getElementById("rejectedHomecooks").innerText = rejectedCooks;
 
 // ========== NAVIGATION ==========
 function goToPending() { window.location.href = "admin_pending_requests.html"; }
-function goToApproved() { window.location.href = "admin_approved_list.html"; }
+function goToApproved() { window.location.href = "admin_approved_shops.html"; }
 function goToHomeCook() { window.location.href = "admin_homecook_request.html"; }
+function goToHomeCookApproved() {
+    window.location.href = "admin_approved_homecook.html";
+}
 
 function logout() {
     localStorage.removeItem("adminLoggedIn");

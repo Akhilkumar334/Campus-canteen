@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeCook Dashboard</title>
+
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="homecook_dashboard.css">
+
+</head>
+<body>
+
+    <!-- ========================= -->
+    <!--        SIDEBAR            -->
+    <!-- ========================= -->
+    <div class="sidebar">
+        <h2 id="sidebarKitchenName">Your Kitchen</h2>
+
+        <button id="dashBtn" class="sidebar-btn active" onclick="goDashboard()">
+            <i class="material-icons">home</i>
+            Dashboard
+        </button>
+
+        <button id="menuBtn" class="sidebar-btn" onclick="goMenu()">
+            <i class="material-icons">restaurant_menu</i>
+            Menu
+        </button>
+
+        <button id="orderBtn" class="sidebar-btn" onclick="goOrders()">
+            <i class="material-icons">shopping_bag</i>
+            Orders
+        </button>
+
+        <button id="historyBtn" class="sidebar-btn" onclick="goHistory()">
+            <i class="material-icons">history</i>
+            History
+        </button>
+
+        <button class="sidebar-btn logout" onclick="logout()">
+            <i class="material-icons">logout</i>
+            Logout
+        </button>
+    </div>
+
+    <!-- ========================= -->
+    <!--        MAIN AREA          -->
+    <!-- ========================= -->
+    <div class="main">
+
+        <!-- ===== Greeting Section ===== -->
+        <div class="greeting-box">
+            <div>
+                <h1 id="greetLine">Good Evening, HomeCook!</h1>
+                <p id="kitchenNameLine">Welcome back to your home kitchen</p>
+            </div>
+
+            <!-- Cute kitchen emoji banner -->
+            <div class="greet-emoji">🍳🥘🍛</div>
+        </div>
+
+        <!-- ===== Dashboard Cards ===== -->
+        <div class="cards">
+
+            <!-- Daily Limit -->
+            <div class="card">
+                <h3>Daily Limit</h3>
+                <p class="big-number" id="dailyLimit">0</p>
+            </div>
+
+            <!-- Kitchen Status -->
+            <div class="card">
+                <h3>Kitchen Status</h3>
+                <p class="big-number" id="kitchenStatus">Open</p>
+            </div>
+
+            <!-- Time Slots -->
+            <div class="card">
+                <h3>Time Slots</h3>
+                <p id="timeSlots">No slots added</p>
+            </div>
+
+            <!-- Total Menu Items -->
+            <div class="card">
+                <h3>Total Dishes</h3>
+                <p class="big-number" id="totalMenuItems">0</p>
+            </div>
+
+            <!-- Today's Orders -->
+            <div class="card">
+                <h3>Today's Orders</h3>
+                <p class="big-number" id="todayOrders">0</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JS File -->
+    <script src="homecook_dashboard.js"></script>
+
+</body>
+</html>

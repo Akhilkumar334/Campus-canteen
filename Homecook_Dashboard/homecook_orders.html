@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeCook Orders</title>
+
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="homecook_orders.css">
+</head>
+<body>
+
+    <!-- ========================= -->
+    <!--         SIDEBAR           -->
+    <!-- ========================= -->
+    <div class="sidebar">
+        <h2 id="sidebarKitchenName">Your Kitchen</h2>
+
+        <button class="sidebar-btn" onclick="goDashboard()">
+            <i class="material-icons">home</i>
+            Dashboard
+        </button>
+
+        <button class="sidebar-btn" onclick="goMenu()">
+            <i class="material-icons">restaurant_menu</i>
+            Menu
+        </button>
+
+        <button class="sidebar-btn active">
+            <i class="material-icons">shopping_bag</i>
+            Orders
+        </button>
+
+        <button class="sidebar-btn" onclick="goHistory()">
+            <i class="material-icons">history</i>
+            History
+        </button>
+
+        <button class="sidebar-btn logout" onclick="logout()">
+            <i class="material-icons">logout</i>
+            Logout
+        </button>
+    </div>
+
+    <!-- ========================= -->
+    <!--          MAIN AREA        -->
+    <!-- ========================= -->
+    <div class="main">
+
+        <div class="top-header">
+            <h1>📦 Orders</h1>
+        </div>
+
+        <p class="subtitle">Manage orders placed by customers</p>
+
+        <!-- Orders List -->
+        <div id="ordersContainer" class="orders-container">
+
+            <!-- DUMMY ORDER CARD (remove later) -->
+            <div class="order-card">
+                <div class="order-header">
+                    <h2>Order #ORD001</h2>
+                    <span class="status pending">pending</span>
+                </div>
+
+                <p class="price">₹160</p>
+
+                <p><strong>Customer:</strong> Akhil</p>
+                <p><strong>Time:</strong> 10:45 AM</p>
+
+                <p><strong>Items:</strong></p>
+                <ul>
+                    <li>1 × Paneer Thali</li>
+                    <li>2 × Chapati</li>
+                </ul>
+
+                <div class="action-row">
+                    <button class="accept-btn">Accept</button>
+                    <button class="reject-btn">Reject</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="homecook_orders.js"></script>
+
+</body>
+</html>
+

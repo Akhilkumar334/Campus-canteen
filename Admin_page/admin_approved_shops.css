@@ -1,0 +1,92 @@
+/* GENERAL PAGE STYLE */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f6f6f6;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    /* padding: 40px;
+    max-width: 800px;
+    margin: 0 auto; */
+    width: 80%;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+
+}
+
+.main-content h1 {
+    /* font-size: 32px;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: center; */
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* APPROVED BOX */
+.approved-box {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.data-row {
+    margin: 12px 0;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.data-row b {
+    color: #444;
+}
+
+/* NO DATA STYLE */
+.no-data {
+    text-align: center;
+    font-size: 20px;
+    padding: 40px 0;
+    color: #777;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding: 10px 18px;
+    background: #ff7f87;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    background: #ff5e67;
+}
+
+
+/* RESPONSIVE */
+@media(max-width: 600px) {
+    .approved-box {
+        padding: 18px;
+    }
+    .main-content {
+        padding: 20px;
+    }
+}
