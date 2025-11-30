@@ -1,12 +1,17 @@
-body {
+/* GLOBAL */
+* {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
     background: #f5f7fb;
     display: flex;
 }
 
-/* Sidebar */
+/* SIDEBAR */
 .sidebar {
     width: 250px;
     height: 100vh;
@@ -18,22 +23,20 @@ body {
 
 .sidebar h2 {
     text-align: center;
-    margin-bottom: 25px;
-    font-size: 22px;
+    margin-bottom: 20px;
 }
 
 .sidebar ul {
     list-style: none;
-    padding: 0;
 }
 
 .sidebar li {
     padding: 12px 15px;
-    margin-bottom: 12px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 12px;
+    margin: 10px 0;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.25s ease;
 }
 
 .sidebar li:hover,
@@ -42,50 +45,76 @@ body {
     color: #0062ff;
 }
 
-/* Main content */
-.main-content {
+/* MAIN */
+.main {
     margin-left: 270px;
     padding: 30px;
     width: calc(100% - 270px);
 }
 
-/* Greeting Box */
-.greeting-box {
+.header-bar {
     background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
     margin-bottom: 25px;
 }
 
-.greeting-box h1 {
-    margin: 0;
-    font-size: 30px;
-}
-
-.greeting-box p {
-    margin: 5px 0 0 0;
-    color: #555;
-    font-size: 18px;
-}
-
-/* Stats cards */
-.stats-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+/* GRID STATS */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
 }
 
 .stat-card {
-    width: 220px;
-    padding: 20px;
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+    padding: 25px;
     text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.10);
+    transition: 0.25s ease;
+    cursor: pointer;
 }
 
-.stat-card h3 {
-    margin: 0;
+.stat-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.card-icon {
+    font-size: 40px;
+    color: #0062ff;
+    margin-bottom: 6px;
+}
+
+.stat-card h2 {
     font-size: 32px;
+    margin: 5px 0;
+    color: #222;
+}
+
+.stat-card p {
+    color: #666;
+}
+
+/* CUSTOM MESSAGE PREVIEW */
+.message-box {
+    margin-top: 28px;
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.10);
+}
+
+.msg-icon {
+    font-size: 40px;
+    color: #0062ff;
+}
+
+.message-box h3 {
+    margin-bottom: 4px;
 }

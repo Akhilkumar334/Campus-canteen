@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="homecook_history.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2 id="sidebarKitchenName">Your Kitchen</h2>
+
+        <button class="sidebar-btn" onclick="goDashboard()">
+            <i class="material-icons">home</i> Dashboard
+        </button>
+
+        <button class="sidebar-btn" onclick="goMenu()">
+            <i class="material-icons">restaurant_menu</i> Menu
+        </button>
+
+        <button class="sidebar-btn" onclick="goOrders()">
+            <i class="material-icons">shopping_bag</i> Orders
+        </button>
+
+        <button class="sidebar-btn active" onclick="goHistory()">
+            <i class="material-icons">history</i> History
+        </button>
+
+        <button class="sidebar-btn" onclick="goSettings()">
+            <i class="material-icons">settings</i> Settings
+        </button>
+
+        <button class="sidebar-btn logout" onclick="logout()">
+            <i class="material-icons">logout</i> Logout
+        </button>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <h1 class="page-title">Order History</h1>
+
+        <div id="historyContainer" class="history-container"></div>
+
+    </div>
+
+    <script src="homecook_history.js"></script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 /* =============================== */
-/*    HOMECOOK HISTORY THEME       */
+/*    HOMECOOK SETTINGS THEME      */
+/*     (Matches Dashboard CSS)     */
 /* =============================== */
 
 * {
@@ -10,7 +11,7 @@
 }
 
 body {
-    background: #f7f5ff;
+    background: #f7f5ff; /* same as dashboard */
     display: flex;
 }
 
@@ -35,6 +36,7 @@ body {
     color: #4a3d3d;
 }
 
+/* Sidebar buttons */
 .sidebar-btn {
     width: 100%;
     padding: 12px 14px;
@@ -67,10 +69,15 @@ body {
 
 .logout {
     margin-top: 40px;
+    background: rgba(255,255,255,0.25);
+}
+
+.logout:hover {
+    background: rgba(255,255,255,0.45);
 }
 
 /* =============================== */
-/*             MAIN                */
+/*            MAIN AREA            */
 /* =============================== */
 .main {
     margin-left: 260px;
@@ -80,97 +87,125 @@ body {
 
 .page-title {
     font-size: 28px;
-    margin-bottom: 20px;
     color: #3b3b3b;
+    margin-bottom: 20px;
 }
 
 /* =============================== */
-/*         HISTORY CARDS           */
+/*         SETTINGS CARDS          */
 /* =============================== */
-.history-container {
-    display: flex;
-    flex-direction: column;
+.settings-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 18px;
 }
 
-.date-card {
+.card {
     background: #ffffff;
     padding: 20px;
     border-radius: 18px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: 0.25s ease;
-    cursor: pointer;
 }
 
-.date-card:hover {
-    transform: translateY(-5px);
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.date-main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.date-title {
+.card h3 {
     font-size: 18px;
+    margin-bottom: 6px;
     color: #444;
-    font-weight: 600;
 }
 
-.date-details {
+.desc {
     font-size: 14px;
     color: #777;
-    margin-top: 4px;
+    margin-bottom: 12px;
 }
 
-.expand-btn {
-    font-size: 22px;
-    color: #444;
-    font-weight: bold;
-    background: #ffffff;
-    padding: 4px 12px;
-    border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.10);
+/* =============================== */
+/*        INPUT + BUTTONS          */
+/* =============================== */
+.input-box {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #ffb7b2;
+    margin-bottom: 10px;
+    background: #fff8f7;
+    font-size: 15px;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    background: #ff6f61;
+    color: #fff;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: 0.25s ease;
 }
 
-.expand-btn:hover {
-    background: #ffe6e0;
-    transform: scale(1.1);
+.save-btn:hover {
+    transform: translateY(-3px);
+    background: #ff4f43;
 }
-.date-main {
+
+/* Toggle Row */
+.toggle-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
 }
 
+/* Switch Toggle */
+.switch {
+    position: relative;
+    width: 52px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background: #ccc;
+    border-radius: 28px;
+    transition: 0.3s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+    background: #ff6f61;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
 
 /* =============================== */
-/*      EXPANDED ORDER BOX         */
-/* =============================== */
-.orders-box {
-    margin-top: 12px;
-}
-
-.order-detail {
-    background: #fff5f5;
-    padding: 14px;
-    border-radius: 14px;
-    margin-bottom: 10px;
-}
-
-.order-line {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 6px;
-    font-size: 14px;
-}
-
-/* =============================== */
-/*          RESPONSIVE             */
+/*        RESONSIVE DESIGN         */
 /* =============================== */
 @media (max-width: 800px) {
     .sidebar {

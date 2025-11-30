@@ -103,6 +103,7 @@ function goDashboard() { window.location.href = "homecook_dashboard.html"; }
 function goMenu() { window.location.href = "homecook_menu.html"; }
 function goOrders() { window.location.href = "homecook_orders.html"; }
 function goHistory() { window.location.href = "homecook_history.html"; }
+function goSettings() { window.location.href = "homecook_settings.html"; }
 
 function logout() {
     localStorage.removeItem("currentHomecook");

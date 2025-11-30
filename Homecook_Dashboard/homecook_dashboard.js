@@ -83,6 +83,9 @@ function goOrders() {
 function goHistory() {
     window.location.href = "homecook_history.html";
 }
+function goSettings() {
+    window.location.href = "homecook_settings.html";
+}   
 
 
 // ========= LOGOUT =========

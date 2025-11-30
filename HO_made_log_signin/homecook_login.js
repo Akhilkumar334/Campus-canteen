@@ -1,8 +1,7 @@
 // ===============================
-// HOMECOOK LOGIN – FINAL VERSION
+// HOMECOOK LOGIN – OPTION A
 // ===============================
 
-// Get page elements
 const loginForm = document.getElementById("homecookLoginForm");
 const emailInput = document.getElementById("homecookEmail");
 const passwordInput = document.getElementById("homecookPassword");
@@ -12,57 +11,52 @@ if (!loginForm) {
 } else {
 
     loginForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // stop form refresh
+        event.preventDefault();
 
         const enteredEmail = emailInput.value.trim();
         const enteredPassword = passwordInput.value.trim();
 
-        // Read saved data from localStorage
-        const savedEmail = localStorage.getItem("homecook_email");
-        const savedPassword = localStorage.getItem("homecook_password");
-        const accountStatus = localStorage.getItem("homecookVerified");
+        // Read full homecook list
+        let homecooksList = JSON.parse(localStorage.getItem("homecooksList")) || [];
 
-        // 1. Check if account exists
-        if (!savedEmail || !savedPassword) {
-            alert("No HomeCook account found. Please sign up first.");
+        // Find matching record
+        let user = homecooksList.find(
+            c => c.email === enteredEmail
+        );
+
+        if (!user) {
+            alert("No account found with this email.");
             return;
         }
 
-        // 2. Validate email
-        if (enteredEmail !== savedEmail) {
-            alert("Incorrect email!");
-            return;
-        }
-
-        // 3. Validate password
-        if (enteredPassword !== savedPassword) {
+        // Password check
+        if (user.password !== enteredPassword) {
             alert("Incorrect password!");
             return;
         }
 
-        // 4. Check verification status
-        if (accountStatus === "pending") {
-            alert("Your account is still under review.");
+        // Status check
+        if (user.status === "pending") {
+            alert("Your account is still under review by admin.");
             return;
         }
 
-        if (accountStatus === "rejected") {
-            alert("Your HomeCook registration was rejected.");
+        if (user.status === "rejected") {
+            alert("Your registration was rejected.");
             return;
         }
 
-        if (accountStatus === "approved") {
+        if (user.status === "approved") {
             alert("Login successful!");
 
             // Save login state
             localStorage.setItem("homecookLoggedIn", "true");
-            localStorage.setItem("currentHomecook", savedEmail);
+            localStorage.setItem("currentHomecook", user.email);
 
-            // Redirect to dashboard
             window.location.href = "../Homecook_Dashboard/homecook_dashboard.html";
             return;
         }
 
-        alert("Unexpected error: Verification status missing.");
+        alert("Unexpected error: Status missing.");
     });
 }

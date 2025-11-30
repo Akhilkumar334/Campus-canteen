@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeCook Settings</title>
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="homecook_settings.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2 id="sidebarKitchenName">Your Kitchen</h2>
+
+        <button class="sidebar-btn" onclick="goDashboard()">
+            <i class="material-icons">home</i> Dashboard
+        </button>
+
+        <button class="sidebar-btn" onclick="goMenu()">
+            <i class="material-icons">restaurant_menu</i> Menu
+        </button>
+
+        <button class="sidebar-btn" onclick="goOrders()">
+            <i class="material-icons">shopping_bag</i> Orders
+        </button>
+
+        <button class="sidebar-btn" onclick="goHistory()">
+            <i class="material-icons">history</i> History
+        </button>
+
+        <button class="sidebar-btn active" onclick="goSettings()">
+            <i class="material-icons">settings</i> Settings
+        </button>
+
+        <button class="sidebar-btn logout" onclick="logout()">
+            <i class="material-icons">logout</i> Logout
+        </button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+        <h1 class="page-title">Settings</h1>
+
+        <div class="settings-container">
+
+            <!-- SHOP STATUS -->
+            <div class="card">
+                <h3>Kitchen Status</h3>
+                <p class="desc">Control whether customers can place orders.</p>
+
+                <div class="toggle-row">
+                    <span id="statusLabel">Open</span>
+                    <label class="switch">
+                        <input type="checkbox" id="statusToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- DAILY LIMIT -->
+            <div class="card">
+                <h3>Daily Order Limit</h3>
+                <p class="desc">Maximum orders per day (0 = no limit)</p>
+
+                <input type="number" id="dailyLimitInput" class="input-box" placeholder="Enter limit...">
+
+                <button class="save-btn" id="saveDailyLimitBtn">Save</button>
+            </div>
+
+            <!-- CUTOFF TIME -->
+            <div class="card">
+                <h3>Order Cutoff Time</h3>
+                <p class="desc">Until what time customers can place orders</p>
+
+                <input type="time" id="cutoffTimeInput" class="input-box">
+
+                <button class="save-btn" id="saveCutoffBtn">Save</button>
+            </div>
+
+            <!-- EXTRA / FUTURE OPTIONS -->
+            <div class="card">
+                <h3>Misc Settings</h3>
+                <p class="desc">Future options will appear here</p>
+
+                <button class="outline-btn">Coming Soon</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JS OPTIONAL (you will integrate later) -->
+    <script src="homecook_settings.js"></script>
+
+</body>
+</html>

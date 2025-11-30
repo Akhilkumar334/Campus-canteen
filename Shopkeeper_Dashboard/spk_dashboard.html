@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,20 +16,21 @@
             <li id="menuSettings" onclick="goMenu()">📋 Menu & Settings</li>
             <li id="menuOrders" onclick="goOrders()">🛒 Orders</li>
             <li id="menuHistory" onclick="goHistory()">📄 History</li>
+            <li id="menusettings" 
             <li onclick="logout()">🚪 Logout</li>
         </ul>
-    </div>
+    </div> -->
 
-    <div class="main-content">
+    <!-- <div class="main-content"> -->
 
         <!-- TOP GREETING SECTION -->
-        <div class="greeting-box">
+        <!-- <div class="greeting-box">
             <h1 id="greetLine">👋 Welcome Back!</h1>
             <p id="shopNameLine">Your shop: Loading...</p>
-        </div>
+        </div> -->
 
         <!-- Quick Stats -->
-        <div class="stats-container">
+        <!-- <div class="stats-container">
             <div class="stat-card">
                 <h3 id="todayOrders">0</h3>
                 <p>Today's Orders</p>
@@ -49,5 +50,124 @@
     </div>
 
 <script src="spk_dashboard.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopkeeper Dashboard</title>
+
+    <link rel="stylesheet" href="spk_dashboard.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2 id="sidebarShopName">Shopkeeper</h2>
+
+        <ul>
+            <li class="active" onclick="goDashboard()">🏠 Dashboard</li>
+            <li onclick="goMenu()">📋 Menu & Settings</li>
+            <li onclick="goOrders()">🛒 Orders</li>
+            <li onclick="goHistory()">📄 History</li>
+            <li onclick="goSettings()">⚙️ Settings</li>
+            <li onclick="logout()">🚪 Logout</li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+        <!-- TITLE -->
+        <div class="header-bar">
+            <h1 id="greetLine">Welcome Back! 👋</h1>
+            <p id="shopNameLine">Your shop: Loading...</p>
+        </div>
+
+        <!-- STATS GRID -->
+        <div class="stats-grid">
+
+            <!-- Today Orders -->
+            <div class="stat-card">
+                <span class="material-icons card-icon">shopping_bag</span>
+                <h2 id="todayOrders">0</h2>
+                <p>Today's Orders</p>
+            </div>
+
+            <!-- Pending Orders -->
+            <div class="stat-card">
+                <span class="material-icons card-icon">pending_actions</span>
+                <h2 id="pendingOrders">0</h2>
+                <p>Pending Orders</p>
+            </div>
+
+            <!-- Revenue Today -->
+            <div class="stat-card">
+                <span class="material-icons card-icon">payments</span>
+                <h2 id="todayRevenue">₹0</h2>
+                <p>Today's Revenue</p>
+            </div>
+
+            <!-- Shop Status -->
+            <div class="stat-card">
+                <span class="material-icons card-icon">store</span>
+                <h2 id="shopStatusText">—</h2>
+                <p>Shop Status</p>
+            </div>
+
+            <!-- Prepaid Percentage -->
+            <div class="stat-card">
+                <span class="material-icons card-icon">percent</span>
+                <h2 id="prepaidPercent">—%</h2>
+                <p>Prepaid Required</p>
+            </div>
+
+            <!-- Order Limit -->
+            <div class="stat-card">
+                <span class="material-icons card-icon">list_alt</span>
+                <h2 id="orderLimit">—</h2>
+                <p>Daily Order Limit</p>
+            </div>
+
+            <!-- Packaging Fee -->
+            <div class="stat-card">
+                <span class="material-icons card-icon">inventory_2</span>
+                <h2 id="packagingFee">₹—</h2>
+                <p>Packaging Charge</p>
+            </div>
+
+            <!-- Prep Time -->
+            <div class="stat-card">
+                <span class="material-icons card-icon">timer</span>
+                <h2 id="prepTime">—m</h2>
+                <p>Preparation Time</p>
+            </div>
+
+            <!-- Auto-Accept -->
+            <div class="stat-card">
+                <span class="material-icons card-icon">check_circle</span>
+                <h2 id="autoAccept">—</h2>
+                <p>Auto-Accept</p>
+            </div>
+
+        </div>
+
+        <!-- CUSTOM MESSAGE PREVIEW -->
+        <div class="message-box">
+            <span class="material-icons msg-icon">campaign</span>
+            <div>
+                <h3>Your Message to Customers</h3>
+                <p id="customMsg">No message added yet.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="spk_dashboard.js"></script>
 </body>
 </html>

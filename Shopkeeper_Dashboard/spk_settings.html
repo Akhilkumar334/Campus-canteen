@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Settings</title>
+
+    <link rel="stylesheet" href="spk_settings.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2 id="sidebarShopName">Shopkeeper</h2>
+
+        <ul>
+            <li onclick="goDashboard()">🏠 Dashboard</li>
+            <li onclick="goMenu()">📋 Menu & Settings</li>
+            <li onclick="goOrders()">🛒 Orders</li>
+            <li onclick="goHistory()">📄 History</li>
+            <li class="active" onclick="goSettings()">⚙️ Settings</li>
+            <li onclick="logout()">🚪 Logout</li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <h1 class="page-title">Shop Settings</h1>
+
+        <div class="settings-grid">
+
+            <!-- SHOP STATUS -->
+            <div class="card">
+                <h3>Shop Status</h3>
+                <p class="desc">Control whether the shop is accepting new orders.</p>
+
+                <div class="toggle-row">
+                    <span id="statusLabel">Open</span>
+                    <label class="switch">
+                        <input type="checkbox" id="statusToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- PREPAID % -->
+            <div class="card">
+                <h3>Prepaid Percentage</h3>
+                <p class="desc">Percentage customer must pay upfront per order.</p>
+
+                <input type="number" id="prepaidInput" class="input-box" placeholder="% e.g. 20">
+                <button class="save-btn" id="savePrepaidBtn">Save</button>
+            </div>
+
+            <!-- DAILY LIMIT -->
+            <div class="card">
+                <h3>Daily Order Limit</h3>
+                <p class="desc">Maximum number of orders per day.</p>
+
+                <input type="number" id="orderLimitInput" class="input-box">
+                <button class="save-btn" id="saveLimitBtn">Save</button>
+            </div>
+
+            <!-- CUTOFF TIME -->
+            <div class="card">
+                <h3>Order Cutoff Time</h3>
+                <p class="desc">Last time a customer can place an order.</p>
+
+                <input type="time" id="cutoffInput" class="input-box">
+                <button class="save-btn" id="saveCutoffBtn">Save</button>
+            </div>
+
+            <!-- PACKAGING -->
+            <div class="card">
+                <h3>Packaging Charge (₹)</h3>
+                <p class="desc">Additional charge per order.</p>
+
+                <input type="number" id="packagingInput" class="input-box">
+                <button class="save-btn" id="savePackagingBtn">Save</button>
+            </div>
+
+            <!-- PREP TIME -->
+            <div class="card">
+                <h3>Preparation Time (min)</h3>
+                <p class="desc">Average time required for preparing orders.</p>
+
+                <input type="number" id="prepTimeInput" class="input-box">
+                <button class="save-btn" id="savePrepBtn">Save</button>
+            </div>
+
+            <!-- AUTO ACCEPT -->
+            <div class="card">
+                <h3>Auto-Accept Orders</h3>
+                <p class="desc">Automatically accept new orders.</p>
+
+                <div class="toggle-row">
+                    <span id="autoAcceptLabel">Off</span>
+                    <label class="switch">
+                        <input type="checkbox" id="autoAcceptToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- CANCEL WINDOW -->
+            <div class="card">
+                <h3>Order Cancel Window (min)</h3>
+                <p class="desc">Time customer has to cancel order after placing it.</p>
+
+                <input type="number" id="cancelWindowInput" class="input-box">
+                <button class="save-btn" id="saveCancelWindowBtn">Save</button>
+            </div>
+
+            <!-- CUSTOM MESSAGE -->
+            <div class="card">
+                <h3>Custom Message</h3>
+                <p class="desc">Message shown to customers on your shop page.</p>
+
+                <input type="text" id="customMsgInput" class="input-box" placeholder="e.g. Fresh food served daily 💙">
+                <button class="save-btn" id="saveCustomMsgBtn">Save</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="spk_settings.js"></script>
+</body>
+</html>
