@@ -100,5 +100,5 @@ function goToHomeCookApproved() {
 function logout() {
     localStorage.removeItem("adminLoggedIn");
     alert("Logged out");
-    window.location.href = "../role.html";
+    window.location.href = "../index.html";
 }

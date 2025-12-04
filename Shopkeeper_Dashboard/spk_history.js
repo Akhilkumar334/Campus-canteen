@@ -50,5 +50,5 @@ function goToOrders() { window.location.href = "spk_orders.html"; }
 function goToHistory() { window.location.href = "spk_history.html"; }
 function logout() { 
     localStorage.removeItem("shopkeeperLoggedIn"); 
-    window.location.href = "../role.html"; 
+    window.location.href = "../index.html"; 
 }

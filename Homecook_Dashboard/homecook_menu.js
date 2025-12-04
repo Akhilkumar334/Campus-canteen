@@ -154,5 +154,5 @@ function logout() {
     localStorage.removeItem("currentHomecook");
     localStorage.removeItem("homecookLoggedIn");
     alert("Logged out!");
-    window.location.href = "../role.html";
+    window.location.href = "../index.html";
 }

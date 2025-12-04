@@ -53,7 +53,7 @@ function goSettings() { window.location.href = "spk_settings.html"; }
 function logout() {
     localStorage.removeItem("currentShopkeeper");
     alert("Logged out!");
-    window.location.href = "../role.html";
+    window.location.href = "../index.html";
 }
 
 // Display shop name

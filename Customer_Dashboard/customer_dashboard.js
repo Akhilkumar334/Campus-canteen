@@ -211,7 +211,7 @@ function logout() {
     // optionally clear selected vendor
     localStorage.removeItem("selectedVendorType");
     localStorage.removeItem("selectedVendorEmail");
-    window.location.href = "../role.html";
+    window.location.href = "../index.html";
 }
 
 // --- initial load

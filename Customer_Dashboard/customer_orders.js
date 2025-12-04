@@ -259,7 +259,7 @@ function reorder(index) {
 // logout helper used by sidebar
 function logout() {
   localStorage.removeItem("currentCustomer");
-  window.location.href = "../role.html";
+  window.location.href = "../index.html";
 }
 
 // close modal on background click

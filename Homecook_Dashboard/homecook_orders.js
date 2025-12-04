@@ -165,7 +165,7 @@ function goSettings() { window.location.href = "homecook_settings.html"; }
 
 function logout() {
     localStorage.removeItem("currentHomecook");
-    window.location.href = "../role.html";
+    window.location.href = "../index.html";
 }
 
 
