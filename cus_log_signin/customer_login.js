@@ -23,7 +23,7 @@ loginForm.addEventListener("submit", function(event) {
         localStorage.setItem("customerLoggedIn", "true");
 
         // Redirect to dashboard
-        window.location.href = "customer_dashboard.html";
+        window.location.href = "../Customer_Dashboard/customer_dashboard.html";
 
     } else {
         alert("Incorrect email or password!");
