@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Orders</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="customer_orders.css">
+</head>
+<body>
+
+  <div class="page">
+    <aside class="sidebar-mini">
+      <div class="brand">Customer</div>
+      <nav>
+        <button onclick="window.location.href='customer_dashboard.html'">Dashboard</button>
+        <button onclick="window.location.href='customer_orders.html'">Orders</button>
+        <button onclick="logout()">Logout</button>
+      </nav>
+    </aside>
+
+    <main class="orders-main">
+      <header class="orders-header">
+        <h1>My Orders</h1>
+        <p class="muted">Your recent orders and their statuses</p>
+      </header>
+
+      <section id="ordersList" class="orders-list">
+        <!-- order cards injected here -->
+      </section>
+    </main>
+  </div>
+
+  <!-- DETAILS MODAL -->
+  <div id="orderModal" class="modal" aria-hidden="true">
+    <div class="modal-body">
+      <button class="close-btn" onclick="closeModal()">✖</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+<script src="customer_orders.js"></script>
+</body>
+</html>

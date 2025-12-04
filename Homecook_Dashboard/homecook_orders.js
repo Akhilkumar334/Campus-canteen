@@ -1,3 +1,7 @@
+// ===================================
+// HOMECOOK ORDERS – FINAL UPGRADED
+// ===================================
+
 // Fetch homecook details
 const user = localStorage.getItem("currentHomecook");
 const kitchenName = localStorage.getItem("homecook_kitchenName");
@@ -6,11 +10,54 @@ document.getElementById("sidebarKitchenName").innerText = kitchenName;
 
 
 // ===============================
-// LOAD ORDERS
+// LOAD ACCEPTING ORDER SLOTS
+// ===============================
+let orderSlots =
+    JSON.parse(localStorage.getItem(`homecook_orderSlots_${user}`)) || [];
+
+
+// Convert "10:45 AM" -> "HH:MM" in 24-hour format for comparison
+function convertTo24(timeStr) {
+    let [time, modifier] = timeStr.split(" ");
+    let [hours, minutes] = time.split(":");
+
+    hours = parseInt(hours);
+
+    if (modifier === "PM" && hours !== 12) {
+        hours += 12;
+    }
+    if (modifier === "AM" && hours === 12) {
+        hours = 0;
+    }
+
+    return `${hours.toString().padStart(2, "0")}:${minutes}`;
+}
+
+
+// Check whether orderTime ("HH:MM") falls inside any slot
+function isLateOrder(orderTime24) {
+    if (orderSlots.length === 0) return false; // no slots → never late
+
+    for (let slot of orderSlots) {
+        if (!slot.start || !slot.end) continue;
+
+        let start = slot.start;
+        let end = slot.end;
+
+        if (orderTime24 >= start && orderTime24 <= end) {
+            return false; // inside some slot → NOT late
+        }
+    }
+
+    return true; // didn't match any slot
+}
+
+
+// ===============================
+// LOAD & RENDER ORDERS
 // ===============================
 function loadOrders() {
     let orders = JSON.parse(localStorage.getItem(`orders_${user}`)) || [];
-
     const container = document.getElementById("ordersContainer");
     container.innerHTML = ""; // reset
 
@@ -28,7 +75,7 @@ function loadOrders() {
 
                 <p class="price">₹160</p>
 
-                <p><strong>Customer:</strong> Akhil</p>
+                <p><strong>Customer:</strong> Akhil (Dummy)</p>
                 <p><strong>Time:</strong> 10:45 AM</p>
 
                 <p><strong>Items:</strong></p>
@@ -43,7 +90,7 @@ function loadOrders() {
                 </div>
             </div>
         `;
-        return; // important: stop here
+        return;
     }
 
 
@@ -51,13 +98,24 @@ function loadOrders() {
     // RENDER REAL ORDERS
     // ================================
     orders.forEach((order, index) => {
+        let orderTime24 = convertTo24(order.time);
+        let late = isLateOrder(orderTime24);
+
         let card = document.createElement("div");
         card.className = "order-card";
 
         card.innerHTML = `
             <div class="order-header">
                 <h2>Order #${order.id}</h2>
-                <span class="status ${order.status}">${order.status}</span>
+
+                <div class="status-box">
+                    <span class="status ${order.status}">${order.status}</span>
+
+                    ${late && order.status === "pending"
+                        ? `<span class="late-badge">Late</span>`
+                        : ""
+                    }
+                </div>
             </div>
 
             <p class="price">₹${order.total}</p>

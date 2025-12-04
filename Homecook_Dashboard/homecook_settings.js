@@ -1,8 +1,10 @@
 // ======================================
-// HOMECOOK SETTINGS – FINAL INTEGRATION
+// HOMECOOK SETTINGS – CLEAN FINAL BUILD
 // ======================================
 
-// Get logged-in HomeCook email
+// ------------------------------
+// BASIC VALIDATION & USER INFO
+// ------------------------------
 const user = localStorage.getItem("currentHomecook");
 const ownerName = localStorage.getItem("homecook_ownerName");
 const kitchenName = localStorage.getItem("homecook_kitchenName");
@@ -12,33 +14,31 @@ if (!user) {
     window.location.href = "../homecook_login/homecook_login.html";
 }
 
+
+
 // ================================
-// LOAD EXISTING VALUES INTO UI
+// LOAD EXISTING SETTINGS INTO UI
 // ================================
 
 // -------- Kitchen Status --------
-let kitchenStatus =
-    localStorage.getItem(`homecook_status_${user}`) || "Open";
+let kitchenStatus = localStorage.getItem(`homecook_status_${user}`) || "Open";
 
 document.getElementById("statusToggle").checked = (kitchenStatus === "Open");
 document.getElementById("statusLabel").innerText = kitchenStatus;
 
-// -------- Daily Limit --------
-let dailyLimit =
-    localStorage.getItem(`homecook_limit_${user}`) || 0;
 
+// -------- Daily Limit --------
+let dailyLimit = localStorage.getItem(`homecook_limit_${user}`) || 0;
 document.getElementById("dailyLimitInput").value = dailyLimit;
 
-// -------- Cutoff Time --------
-// New key (not present earlier)
-let cutoffTime =
-    localStorage.getItem(`homecook_cutoff_${user}`) || "21:00";
 
+// -------- Cutoff Time (OLD SYSTEM, STILL SUPPORTED) --------
+let cutoffTime = localStorage.getItem(`homecook_cutoff_${user}`) || "";
 document.getElementById("cutoffTimeInput").value = cutoffTime;
 
 
 // ================================
-//        EVENT LISTENERS
+// SAVE SETTINGS EVENT LISTENERS
 // ================================
 
 // -------- Toggle Kitchen Status --------
@@ -62,12 +62,11 @@ document.getElementById("saveDailyLimitBtn").addEventListener("click", function 
     }
 
     localStorage.setItem(`homecook_limit_${user}`, limitValue);
-
-    alert("Daily limit updated!");
+    alert("Daily order limit updated!");
 });
 
 
-// -------- Save Cutoff Time --------
+// -------- Save Cutoff Time (OLD SYSTEM) --------
 document.getElementById("saveCutoffBtn").addEventListener("click", function () {
     let cutoff = document.getElementById("cutoffTimeInput").value;
 
@@ -77,13 +76,129 @@ document.getElementById("saveCutoffBtn").addEventListener("click", function () {
     }
 
     localStorage.setItem(`homecook_cutoff_${user}`, cutoff);
-
-    alert("Cutoff time updated!");
+    alert("Order cutoff time updated!");
 });
 
 
+
+// =========================================================
+// MULTIPLE ORDER ACCEPTING SLOTS (NEW SYSTEM)
+// =========================================================
+
+// Load from storage
+let orderSlots = JSON.parse(localStorage.getItem(`homecook_orderSlots_${user}`)) || [];
+
+function renderOrderSlots() {
+    const container = document.getElementById("orderSlotsContainer");
+    container.innerHTML = "";
+
+    orderSlots.forEach((slot, index) => {
+        container.innerHTML += `
+            <div class="slot-row">
+                <input type="time" value="${slot.start}"
+                       onchange="updateOrderSlot(${index}, 'start', this.value)">
+                
+                <span class="to-label">to</span>
+                
+                <input type="time" value="${slot.end}"
+                       onchange="updateOrderSlot(${index}, 'end', this.value)">
+                
+                <button class="delete-btn" onclick="deleteOrderSlot(${index})">✖</button>
+            </div>
+        `;
+    });
+}
+
+function addOrderSlot() {
+    orderSlots.push({ start: "08:00", end: "10:00" }); // default slot
+    saveOrderSlots();
+    renderOrderSlots();
+}
+
+function updateOrderSlot(index, key, value) {
+    orderSlots[index][key] = value;
+    saveOrderSlots();
+}
+
+function deleteOrderSlot(index) {
+    orderSlots.splice(index, 1);
+    saveOrderSlots();
+    renderOrderSlots();
+}
+
+function saveOrderSlots() {
+    localStorage.setItem(`homecook_orderSlots_${user}`, JSON.stringify(orderSlots));
+}
+
+
+
+// =========================================================
+// MULTIPLE DELIVERY TIME SLOTS (NEW SYSTEM)
+// =========================================================
+
+let deliverySlots = JSON.parse(localStorage.getItem(`homecook_deliverySlots_${user}`)) || [];
+
+function renderDeliverySlots() {
+    const container = document.getElementById("deliverySlotsContainer");
+    container.innerHTML = "";
+
+    deliverySlots.forEach((time, index) => {
+        container.innerHTML += `
+            <div class="slot-row">
+                <input type="time" value="${time}"
+                       onchange="updateDeliverySlot(${index}, this.value)">
+
+                <button class="delete-btn" onclick="deleteDeliverySlot(${index})">✖</button>
+            </div>
+        `;
+    });
+}
+
+function addDeliverySlot() {
+    deliverySlots.push("13:00"); // default delivery time
+    saveDeliverySlots();
+    renderDeliverySlots();
+}
+
+function updateDeliverySlot(index, value) {
+    deliverySlots[index] = value;
+    saveDeliverySlots();
+}
+
+function deleteDeliverySlot(index) {
+    deliverySlots.splice(index, 1);
+    saveDeliverySlots();
+    renderDeliverySlots();
+}
+
+function saveDeliverySlots() {
+    localStorage.setItem(`homecook_deliverySlots_${user}`, JSON.stringify(deliverySlots));
+}
+
+
+
+// =========================================================
+// REGISTER FUNCTIONS GLOBALLY (HTML onclick NEEDS THIS)
+// =========================================================
+window.addOrderSlot = addOrderSlot;
+window.updateOrderSlot = updateOrderSlot;
+window.deleteOrderSlot = deleteOrderSlot;
+
+window.addDeliverySlot = addDeliverySlot;
+window.updateDeliverySlot = updateDeliverySlot;
+window.deleteDeliverySlot = deleteDeliverySlot;
+
+
+// =========================================================
+// INITIAL RENDER CALLS
+// =========================================================
+renderOrderSlots();
+renderDeliverySlots();
+
+
+
 // ================================
-// NAVIGATION (same functions as dashboard)
+// NAVIGATION (BOTTOM OF FILE)
 // ================================
 function goDashboard() { window.location.href = "homecook_dashboard.html"; }
 function goMenu() { window.location.href = "homecook_menu.html"; }

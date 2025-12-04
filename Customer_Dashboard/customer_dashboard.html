@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Customer Dashboard</title>
+
+    <!-- Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="customer_dashboard.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="Sidebar">
+        <div class="sidebar-inner">
+            <h2 id="custBrand">Customer</h2>
+
+            <nav class="side-nav">
+                <button class="side-btn active" id="nav-dashboard">
+                    <span class="material-icons">dashboard</span>
+                    <span>Dashboard</span>
+                </button>
+
+                <button class="side-btn" id="nav-orders" onclick="window.location.href='customer_orders.html'">
+                    <span class="material-icons">history</span>
+                    <span>Orders</span>
+                </button>
+
+                <button class="side-btn" id="nav-logout" onclick="logout()">
+                    <span class="material-icons">logout</span>
+                    <span>Logout</span>
+                </button>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main" role="main">
+        <div class="content-wrap">
+
+            <!-- HEADER ROW -->
+            <header class="topbar">
+                <div class="greeting">
+                    <h1 id="greetLine">Hello!</h1>
+                    <p class="subtitle">Explore tasty meals around your campus</p>
+                </div>
+
+                <div class="header-actions">
+                    <div class="search-wrap">
+                        <input id="searchInput" type="search" placeholder="Search restaurants, homecooks, cuisines..." />
+                        <button id="clearSearch" title="Clear search" aria-label="Clear search">✖</button>
+                    </div>
+
+                    <div class="profile-wrap">
+                        <button id="profileBtn" class="profile-btn" aria-haspopup="true" aria-expanded="false">
+                            <span class="profile-initial" id="profileInitial">C</span>
+                            <span class="material-icons">arrow_drop_down</span>
+                        </button>
+
+                        <div id="profileDropdown" class="profile-dropdown" role="menu" aria-hidden="true">
+                            <div class="pd-name" id="profileName">Customer</div>
+                            <button class="pd-item" onclick="logout()">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- TABS -->
+            <div class="tabs">
+                <button id="tabCanteens" class="tab active" onclick="showCanteens()">Canteens</button>
+                <button id="tabHomeCooks" class="tab" onclick="showHomeCooks()">HomeCooks</button>
+            </div>
+
+            <!-- LISTS -->
+            <section id="canteenList" class="list-container" aria-label="Canteens list"></section>
+            <section id="homecookList" class="list-container" aria-label="HomeCooks list" hidden></section>
+
+        </div>
+    </main>
+
+<script src="customer_dashboard.js"></script>
+</body>
+</html>

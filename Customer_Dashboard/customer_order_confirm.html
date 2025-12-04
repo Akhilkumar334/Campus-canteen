@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="customer_order_confirm.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- CONFETTI (optional overlay) -->
+        <canvas id="confettiCanvas"></canvas>
+
+        <div class="card">
+            <div class="success-icon">✔</div>
+
+            <h1>Order Placed Successfully!</h1>
+            <p class="subtitle">Your delicious food is on the way 😍</p>
+
+            <div id="orderSummary" class="summary-box">
+                <!-- JS Injected -->
+            </div>
+
+            <button class="dashboard-btn" onclick="goDashboard()">Back to Dashboard</button>
+        </div>
+    </div>
+
+    <script src="customer_order_confirm.js"></script>
+</body>
+</html>
