@@ -10,7 +10,7 @@ const kitchenName = localStorage.getItem("homecook_kitchenName");
 // If no login found
 if (!user) {
     alert("Please login again.");
-    window.location.href = "../homecook_login/homecook_login.html";
+    window.location.href = "../Ho_made_log_signin/homecook_login.html";
 }
 
 // Update Sidebar Kitchen Name
@@ -23,7 +23,7 @@ function greeting() {
 
     if (hour < 12) return "🌅 Good Morning, " + ownerName + "!";
     if (hour < 17) return "☀️ Good Afternoon, " + ownerName + "!";
-    return "🌙 Good Evening, " + ownerName + "!";
+    return "🌙 Good Evening, ";
 }
 
 // Set greeting
@@ -31,7 +31,7 @@ document.getElementById("greetLine").innerText = greeting();
 
 // Show kitchen name
 document.getElementById("kitchenNameLine").innerText =
-    "Welcome back to " + kitchenName;
+    "Welcome back  ";
 
 
 // ========= LOAD HOMECOOK DASHBOARD DATA =========
