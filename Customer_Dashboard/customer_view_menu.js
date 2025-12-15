@@ -161,32 +161,70 @@ function updateCart() {
 // ===============================
 // PLACE ORDER
 // ===============================
+// function placeOrder() {
+//     if (Object.keys(cart).length === 0) {
+//         alert("Your cart is empty.");
+//         return;
+//     }
+
+//     const orderId = "ORD" + Math.floor(Math.random() * 90000 + 10000);
+
+//     const order = {
+//         id: orderId,
+//         customer: localStorage.getItem("currentCustomer"),
+//         time: new Date().toLocaleTimeString(),
+//         items: Object.values(cart).map(i => `${i.qty} × ${i.name}`),
+//         total: Number(totalEl.innerText),
+//         status: "pending"
+//     };
+
+//     // Save order under vendor
+//     const key = `orders_${vendorEmail}`;
+//     const oldOrders = JSON.parse(localStorage.getItem(key)) || [];
+//     oldOrders.push(order);
+//     localStorage.setItem(key, JSON.stringify(oldOrders));
+
+//     alert("Order placed successfully!");
+//     window.location.href = "customer_dashboard.html";
+// }
 function placeOrder() {
     if (Object.keys(cart).length === 0) {
         alert("Your cart is empty.");
         return;
     }
-
-    const orderId = "ORD" + Math.floor(Math.random() * 90000 + 10000);
+    const customerName =
+    localStorage.getItem("currentCustomer") ||
+    localStorage.getItem("currentUser") ||
+    "Guest";
 
     const order = {
-        id: orderId,
-        customer: localStorage.getItem("currentCustomer"),
-        time: new Date().toLocaleTimeString(),
+        id: "ORD" + Date.now(),
+        customer: customerName,
+        vendorType: vendorType,
+        vendorEmail: vendorEmail,
+        time: new Date().toLocaleString(),
         items: Object.values(cart).map(i => `${i.qty} × ${i.name}`),
         total: Number(totalEl.innerText),
         status: "pending"
     };
 
-    // Save order under vendor
-    const key = `orders_${vendorEmail}`;
-    const oldOrders = JSON.parse(localStorage.getItem(key)) || [];
-    oldOrders.push(order);
-    localStorage.setItem(key, JSON.stringify(oldOrders));
+    // 1️⃣ SAVE FOR CONFIRMATION PAGE
+    localStorage.setItem("latest_customer_order", JSON.stringify(order));
+    localStorage.setItem("latest_order_vendor", vendorEmail);
+    localStorage.setItem("latest_vendor_type", vendorType);
 
-    alert("Order placed successfully!");
-    window.location.href = "customer_dashboard.html";
+    // 2️⃣ SAVE TO GLOBAL ORDERS LIST (CRITICAL)
+    let ordersList = JSON.parse(localStorage.getItem("ordersList")) || [];
+    ordersList.push(order);
+    localStorage.setItem("ordersList", JSON.stringify(ordersList));
+
+    // 3️⃣ CLEAR CART
+    cart = {};
+
+    // 4️⃣ GO TO CONFIRMATION PAGE
+    window.location.href = "customer_order_confirm.html";
 }
+
 
 
 // ===============================
