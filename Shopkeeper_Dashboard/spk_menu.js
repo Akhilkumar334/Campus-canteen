@@ -153,5 +153,5 @@ function goToHistory() {
 }
 function logout() {
     localStorage.removeItem("currentShopkeeper");
-    window.location.href = "../spk_log_signin/spk_login.html";
+    window.location.href = "../index.html";
 }

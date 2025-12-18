@@ -13,9 +13,8 @@ const emailField = document.getElementById("email");
 let generatedOTP = "";
 
 
-// ------------------------------------------
 // 2. When user clicks "Send OTP"
-// ------------------------------------------
+
 
 sendOtpBtn.addEventListener("click", function () {
     
@@ -30,7 +29,7 @@ sendOtpBtn.addEventListener("click", function () {
     // Step 2: Generate a 6-digit OTP
     generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
 
-    console.log("Generated OTP:", generatedOTP); // for testing
+    // console.log("Generated OTP:", generatedOTP); // for testing
 
     // Step 3: Show OTP input field
     otpSection.style.display = "block";
@@ -101,4 +100,3 @@ document.getElementById("signupForm").addEventListener("submit", function (event
     // REDIRECT TO LOGIN PAGE
     window.location.href = "customer_login.html";
 });
-
